@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Camera;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private ImageView mImageView;
     private Button mButton;
     private Button mCloudButton;
+    private Button mCameraButton;
     private Bitmap mSelectedImage;
     private GraphicOverlay mGraphicOverlay;
     // Max width (portrait mode)
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         mButton = findViewById(R.id.button_text);
         mCloudButton = findViewById(R.id.button_cloud_text);
+        mCameraButton = findViewById(R.id.button_camera_reader);
 
         mGraphicOverlay = findViewById(R.id.graphic_overlay);
         mButton.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +71,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View v) {
                 runCloudTextRecognition();
+            }
+        });
+
+        mCameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CameraActivity.class));
             }
         });
         Spinner dropdown = findViewById(R.id.spinner);
