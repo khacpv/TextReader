@@ -27,6 +27,8 @@ import com.google.firebase.ml.vision.cloud.text.FirebaseVisionCloudText;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextDetector;
+import com.oicsoft.mlkit.cloudtextrecognition.CloudTextGraphic;
+import com.oicsoft.mlkit.textrecognition.TextGraphic;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -118,7 +120,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 List<FirebaseVisionText.Element> elements = lines.get(j).getElements();
                 for (int k = 0; k < elements.size(); k++) {
                     Log.e("TAG", "Found text: " + elements.get(k).getText());
-                    // TODO draw text to overlay
+                    GraphicOverlay.Graphic textGraphic = new TextGraphic(mGraphicOverlay, elements.get(k));
+                    mGraphicOverlay.add(textGraphic);
                 }
             }
         }
@@ -172,7 +175,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     List<FirebaseVisionCloudText.Word> words = paragraph.getWords();
                     for (int l = 0; l < words.size(); l++) {
                         Log.e("TAG", "found text from cloud: " + words.get(l).toString());
-                        // TODO draw text on overlay
+                        GraphicOverlay.Graphic cloudTextGraphic = new CloudTextGraphic(mGraphicOverlay, words.get(l));
+                        mGraphicOverlay.add(cloudTextGraphic);
                     }
                 }
             }
