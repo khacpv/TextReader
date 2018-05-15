@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "938968388506",
+    "firebase_url": "https://nichirin.firebaseio.com",
+    "project_id": "firebase-nichirin",
+    "storage_bucket": "firebase-nichirin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938968388506:android:36e179d7bcbff299",
+        "android_client_info": {
+          "package_name": "com.oicsoft.mlkit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938968388506-u9dvr5ai5mabil8tj42k1cqcgcn4lj30.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC28hnk2PY18VdyMlQz0jf9gLbj9p79kF8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
